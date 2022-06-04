@@ -1,0 +1,265 @@
+:root {
+  --text-blue: hsl(238, 29%, 16%);
+  --text-dkblue: hsl(240, 6%, 50%);
+  --text-xdkblue: hsl(237, 12%, 33%);
+  --text-red: hsl(14, 88%, 65%);
+  --gradient-violet: hsl(273, 75%, 66%);
+  --gradient-blue: hsl(240, 73%, 65%);
+  --divider-blue: hsl(240, 5%, 91%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 10rem 1rem;
+  font-family: 'Kumbh Sans', sans-serif;
+  background-image: linear-gradient(
+    var(--gradient-violet),
+    var(--gradient-blue)
+  );
+  color: var(--text-blue);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+}
+
+.card__box {
+  display: none;
+}
+
+.card {
+  background: #fff;
+  border-radius: 2rem;
+  max-width: 56rem;
+  padding: 2.875rem 1.5rem;
+  background-image: url(/images/bg-pattern-mobile.svg);
+  background-size: 15rem;
+  background-repeat: no-repeat;
+  background-position: center 0%;
+}
+
+.card__image {
+  position: relative;
+}
+
+.card__image img {
+  position: absolute;
+  top: -6.8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  width: 100%;
+  max-width: 15rem;
+  display: block;
+}
+
+.card__text {
+  padding-top: 7rem;
+}
+
+.accordion__item {
+  padding-top: 1rem;
+  border-bottom: 1px solid var(--divider-blue);
+}
+
+.accordion__item h2 {
+  margin-bottom: 0;
+}
+
+.accordion__question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 0.2rem;
+  font-size: 0.875rem;
+  font-family: 'Kumbh Sans', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.accordion__question::after {
+  content: '';
+  display: block;
+  width: 0.625rem;
+  height: 1rem;
+  border: none;
+  background-image: url(/images/icon-arrow-down.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  transition: transform 300ms ease-in-out;
+}
+
+.accordion__question:focus,
+.accordion__question:focus-visible {
+  border: none;
+  outline: dashed 1px rgba(0, 0, 0, 0.25);
+}
+
+.accordion__question.open {
+  font-weight: 700;
+}
+
+.accordion__question.open::after {
+  transform: rotate(180deg);
+}
+
+.accordion__content {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  padding-bottom: 1rem;
+}
+
+.accordion__collapse.collapse {
+  display: none;
+}
+
+.accordion__collapse.collapsing {
+  height: 0;
+  overflow: hidden;
+  transition: height 300ms ease;
+}
+
+.accordion__collapse.open {
+  display: block;
+}
+
+/* DESKTOP STYLES */
+@media (min-width: 56em) {
+  body {
+    padding: 5rem;
+  }
+  .card {
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+    padding: 4.375rem 6.25rem 4.375rem 0;
+    background-image: url(/images/bg-pattern-desktop.svg);
+    background-size: 45%;
+    background-position: -13% center;
+  }
+
+  .card__box {
+    display: block;
+    position: absolute;
+    top: 57%;
+    left: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  .card__image,
+  .card__text {
+    flex: 1;
+  }
+
+  .card__image {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .card__image img {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: translateX(-4rem);
+    max-width: 25rem;
+  }
+
+  .card__text {
+    padding-top: 0;
+  }
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+  background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  background-repeat: no-repeat;
+}
+
+.bg-img {
+  overflow: hidden;
+  margin-top: -20rem;
+  margin-left: -36rem;
+}
+
+.box {
+  position: absolute;
+  left: 14%;
+  top: 37%;
+  z-index: 3;
+}
+
+.woman-online {
+  position: relative;
+  top: -37rem;
+  left: -5rem;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  background: #fff;
+  width: 60%;
+  height: 30rem;
+  margin-left: 20%;
+  margin-top: 5rem;
+  border-radius: 10px;
+}
+
+.faq {
+  margin-top: 3rem;
+  margin-right: 6rem;
+}
+
+.QnA-section {
+  margin-top: 2rem;
+  line-height: 3rem;
+}
+
+.question:hover,
+:active {
+  background-color: #ccc;
+}
+
+.question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+
+span {
+  padding-left: 2rem;
+}
+
+.answer {
+  display: none;
+  overflow: hidden;
+} */
